@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="SuperHeroes.BL/SuperHeroes.BL.csproj" />
+  <Project Path="SuperHeroes.DAL/SuperHeroes.DAL.csproj" />
+  <Project Path="SuperHeroes.Entities/SuperHeroes.Entities.csproj" />
+  <Project Path="SuperHeroes/SuperHeroes.csproj" />
+</Solution>
