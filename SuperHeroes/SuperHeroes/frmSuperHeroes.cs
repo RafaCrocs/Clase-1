@@ -39,7 +39,7 @@ namespace SuperHeroes
             {
                 return;
             }
-            
+
             int IdSuperHeroe = listaSuperHeroes[e.RowIndex].IdSuperHeroe;
             string nombreSuperHeroe = listaSuperHeroes[e.RowIndex].Nombre;
 
@@ -48,6 +48,12 @@ namespace SuperHeroes
                 frmSuperHeroe_SuperPoder modalPoderes = new frmSuperHeroe_SuperPoder(IdSuperHeroe, nombreSuperHeroe);
                 modalPoderes.ShowDialog();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmSuperPoderes modalPoderes = new frmSuperPoderes();
+            modalPoderes.Show();
         }
     }
 }

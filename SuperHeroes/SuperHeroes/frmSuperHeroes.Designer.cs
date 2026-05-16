@@ -33,6 +33,7 @@
             IdSuperHeroe = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             btnAgregarSuperHeroe = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)gridSuperHeroes).BeginInit();
             SuspendLayout();
             // 
@@ -85,11 +86,23 @@
             btnAgregarSuperHeroe.UseVisualStyleBackColor = true;
             btnAgregarSuperHeroe.Click += btnAgregarSuperHeroe_Click;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 12F);
+            button1.Location = new Point(840, 80);
+            button1.Name = "button1";
+            button1.Size = new Size(202, 49);
+            button1.TabIndex = 2;
+            button1.Text = "Ver Super Poderes";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // frmSuperHeroes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1077, 640);
+            Controls.Add(button1);
             Controls.Add(btnAgregarSuperHeroe);
             Controls.Add(gridSuperHeroes);
             Name = "frmSuperHeroes";
@@ -106,5 +119,6 @@
         private DataGridViewTextBoxColumn IdSuperHeroe;
         private DataGridViewTextBoxColumn Nombre;
         private Button btnAgregarSuperHeroe;
+        private Button button1;
     }
 }

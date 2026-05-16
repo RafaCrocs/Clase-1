@@ -11,9 +11,9 @@ namespace SuperHeroes.BL
 
         private SuperPoderDAL superPoderesDAL = new SuperPoderDAL();
 
-        public List<SuperPoder> SuperPoderes_ObtenerPorHeroe(int IdSuperHeroe)
+        public List<SuperPoder> SuperPoderes_ObtenerTodos()
         {
-            return superPoderesDAL.SuperPoderes_ObtenerPorHeroe(IdSuperHeroe);
+            return superPoderesDAL.SuperPoderes_ObtenerTodos();
         }
     }
 }

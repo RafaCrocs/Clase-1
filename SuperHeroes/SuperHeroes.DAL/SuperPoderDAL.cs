@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Reflection.Metadata;
 using System.Text;
 
 namespace SuperHeroes.DAL
@@ -9,34 +10,35 @@ namespace SuperHeroes.DAL
     public class SuperPoderDAL
     {
 
-        public List<SuperPoder> SuperPoderes_ObtenerPorHeroe(int IdSuperHeroe)
+        public List<SuperPoder> SuperPoderes_ObtenerTodos()
         {
             List<SuperPoder> listaSuperPoderes = new List<SuperPoder>();
 
+            string query = "Select * from SuperPoderes";
+
             using (SqlConnection conn = new SqlConnection(Conexion.Cadena))
             {
-                conn.Open();
-
-                SqlCommand cmd = new SqlCommand("SP_ObtenerSuperPoderes", conn);
-
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@IdSuperHeroe", IdSuperHeroe);
-
-                cmd.Parameters.Add("@Mensaje", System.Data.SqlDbType.VarChar, 500).Direction = System.Data.ParameterDirection.Output;
-                cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
                 {
-                    SuperPoder superPoder = new SuperPoder
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        IdSuperPoder = Convert.ToInt32(reader["IdSuperPoder"]),
-                        Descripcion = reader["Descripcion"].ToString()
-                    };
-                    listaSuperPoderes.Add(superPoder);
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                SuperPoder superPoder = new SuperPoder
+                                {
+                                    IdSuperPoder = Convert.ToInt32(dr["IdSuperPoder"]),
+                                    Descripcion = dr["Descripcion"].ToString()
+                                };
+                                listaSuperPoderes.Add(superPoder);
+                            }
+                        }
+                    }
                 }
+
+                return listaSuperPoderes;
             }
-            return listaSuperPoderes;
         }
     }
 }
