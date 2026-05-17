@@ -15,5 +15,10 @@ namespace SuperHeroes.BL
         {
             return superPoderesDAL.SuperPoderes_ObtenerTodos();
         }
+
+        public bool AgregarSuperPoder(SuperPoder superPoder, out string mensaje)
+        {
+            return superPoderesDAL.Agregar_SuperPoder(superPoder, out mensaje);
+        }
     }
 }

@@ -30,7 +30,10 @@ namespace SuperHeroes
         {
             AgregarSuperHeroe_Modal modal = new AgregarSuperHeroe_Modal();
             modal.ShowDialog();
-            CargarGrid();
+            if(modal.DialogResult == DialogResult.OK)
+            {
+                CargarGrid();
+            }
         }
 
         private void gridSuperHeroes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,12 +51,6 @@ namespace SuperHeroes
                 frmSuperHeroe_SuperPoder modalPoderes = new frmSuperHeroe_SuperPoder(IdSuperHeroe, nombreSuperHeroe);
                 modalPoderes.ShowDialog();
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmSuperPoderes modalPoderes = new frmSuperPoderes();
-            modalPoderes.Show();
         }
     }
 }

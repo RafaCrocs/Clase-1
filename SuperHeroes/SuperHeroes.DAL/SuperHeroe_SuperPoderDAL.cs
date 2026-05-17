@@ -39,5 +39,36 @@ namespace SuperHeroes.DAL
             }
             return listaSuperHeroe_SuperPoder;
         }
+
+        public bool AgregarSuperPoderASuperHeroe(int IdSuperHeroe, int IdSuperPoder, out string mensaje)
+        {
+
+            bool resultado = false;
+            mensaje = string.Empty;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Conexion.Cadena))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("SP_InsertarSuperPoderASuperHeroe", conn);
+
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@IdSuperHeroe", IdSuperHeroe);
+                    cmd.Parameters.AddWithValue("@IdSuperPoder", IdSuperPoder);
+
+                    cmd.Parameters.Add("@Mensaje", System.Data.SqlDbType.VarChar, 255).Direction = System.Data.ParameterDirection.Output;
+                    cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+
+                    resultado = cmd.ExecuteNonQuery() > 0;
+                    mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                mensaje = ex.Message;
+            }
+            return resultado;
+        }
     }
 }

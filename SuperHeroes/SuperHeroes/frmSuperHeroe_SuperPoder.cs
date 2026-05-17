@@ -33,5 +33,15 @@ namespace SuperHeroes
             lblNombre.Text = $"Poderes de {NombreSuperHeroe}";
             CargarGrid();
         }
+
+        private void btnAgregarSuperPoder_Click(object sender, EventArgs e)
+        {
+            frmSuperPoderes frmSuperPoderes = new frmSuperPoderes(IdSuperHeroe);
+            frmSuperPoderes.ShowDialog();
+            if(frmSuperPoderes.DialogResult == DialogResult.OK)
+            {
+                CargarGrid();
+            }
+        }
     }
 }

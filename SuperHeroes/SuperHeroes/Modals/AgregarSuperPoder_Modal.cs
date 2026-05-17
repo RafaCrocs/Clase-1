@@ -10,31 +10,23 @@ using System.Windows.Forms;
 
 namespace SuperHeroes.Modals
 {
-    public partial class AgregarSuperHeroe_Modal : Form
+    public partial class AgregarSuperPoder_Modal : Form
     {
-        public AgregarSuperHeroe_Modal()
+        public AgregarSuperPoder_Modal()
         {
             InitializeComponent();
         }
 
-        private SuperHeroesBL superHeroesBL = new SuperHeroesBL();
-        private string mensaje = string.Empty;
+        private SuperPoderesBL superPoderesBL = new SuperPoderesBL();
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            SuperHeroe superHeroe = new SuperHeroe
+            SuperPoder superPoder = new SuperPoder
             {
-                Nombre = txtNombre.Text
+                Descripcion = txtDescripcion.Text
             };
-            if (superHeroesBL.Agregar_SuperHeroe(superHeroe, out mensaje))
-            {
-                MessageBox.Show("Superhéroe agregado correctamente");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show(mensaje);
-            }
+            superPoderesBL.AgregarSuperPoder(superPoder, out string mensaje);
+            MessageBox.Show(mensaje);
             DialogResult = DialogResult.OK;
         }
 

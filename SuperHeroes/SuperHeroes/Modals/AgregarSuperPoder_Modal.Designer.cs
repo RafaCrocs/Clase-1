@@ -1,6 +1,6 @@
 ﻿namespace SuperHeroes.Modals
 {
-    partial class AgregarSuperHeroe_Modal
+    partial class AgregarSuperPoder_Modal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,57 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtNombre = new TextBox();
-            label1 = new Label();
-            btnAgregar = new Button();
             btnCancelar = new Button();
+            btnAgregar = new Button();
+            label1 = new Label();
+            txtDescripcion = new TextBox();
             label2 = new Label();
             SuspendLayout();
-            // 
-            // txtNombre
-            // 
-            txtNombre.Font = new Font("Segoe UI", 15F);
-            txtNombre.Location = new Point(32, 130);
-            txtNombre.Margin = new Padding(3, 2, 3, 2);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(260, 34);
-            txtNombre.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F);
-            label1.Location = new Point(32, 83);
-            label1.Name = "label1";
-            label1.Size = new Size(89, 28);
-            label1.TabIndex = 1;
-            label1.Text = "Nombre:";
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.BackColor = Color.FromArgb(192, 255, 192);
-            btnAgregar.Font = new Font("Segoe UI", 15F);
-            btnAgregar.Location = new Point(32, 197);
-            btnAgregar.Margin = new Padding(3, 2, 3, 2);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(114, 45);
-            btnAgregar.TabIndex = 2;
-            btnAgregar.Text = "AGREGAR";
-            btnAgregar.UseVisualStyleBackColor = false;
-            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.FromArgb(255, 192, 192);
             btnCancelar.Font = new Font("Segoe UI", 15F);
-            btnCancelar.Location = new Point(170, 197);
+            btnCancelar.Location = new Point(171, 193);
             btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(122, 45);
-            btnCancelar.TabIndex = 3;
+            btnCancelar.TabIndex = 7;
             btnCancelar.Text = "CANCELAR";
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.BackColor = Color.FromArgb(192, 255, 192);
+            btnAgregar.Font = new Font("Segoe UI", 15F);
+            btnAgregar.Location = new Point(33, 193);
+            btnAgregar.Margin = new Padding(3, 2, 3, 2);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(114, 45);
+            btnAgregar.TabIndex = 6;
+            btnAgregar.Text = "AGREGAR";
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(33, 79);
+            label1.Name = "label1";
+            label1.Size = new Size(118, 28);
+            label1.TabIndex = 5;
+            label1.Text = "Descripcion:";
+            // 
+            // txtDescripcion
+            // 
+            txtDescripcion.Font = new Font("Segoe UI", 15F);
+            txtDescripcion.Location = new Point(33, 126);
+            txtDescripcion.Margin = new Padding(3, 2, 3, 2);
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(260, 34);
+            txtDescripcion.TabIndex = 4;
             // 
             // label2
             // 
@@ -87,36 +87,36 @@
             label2.Font = new Font("Segoe UI", 15F);
             label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(326, 59);
-            label2.TabIndex = 9;
-            label2.Text = "Nuevo Super Heroe";
+            label2.Size = new Size(323, 59);
+            label2.TabIndex = 8;
+            label2.Text = "Nuevo Super Poder";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // AgregarSuperHeroe_Modal
+            // AgregarSuperPoder_Modal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(326, 282);
+            ClientSize = new Size(323, 279);
+            ControlBox = false;
             Controls.Add(label2);
             Controls.Add(btnCancelar);
             Controls.Add(btnAgregar);
             Controls.Add(label1);
-            Controls.Add(txtNombre);
+            Controls.Add(txtDescripcion);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "AgregarSuperHeroe_Modal";
+            Name = "AgregarSuperPoder_Modal";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AgregarSuperHeroe_Modal";
+            Text = "AgregarSuperPoder_Modal";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox txtNombre;
-        private Label label1;
-        private Button btnAgregar;
         private Button btnCancelar;
+        private Button btnAgregar;
+        private Label label1;
+        private TextBox txtDescripcion;
         private Label label2;
     }
 }

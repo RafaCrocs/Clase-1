@@ -15,5 +15,10 @@ namespace SuperHeroes.BL
         {
             return superHeroe_SuperPoderDAL.ObtenerPoderesPorHeroe(IdSuperHeroe);
         }
+
+        public bool AgregarPoderASuperHeroe(int IdSuperHeroe, int IdSuperPoder, out string mensaje)
+        {
+            return superHeroe_SuperPoderDAL.AgregarSuperPoderASuperHeroe(IdSuperHeroe, IdSuperPoder, out mensaje);
+        }
     }
 }
